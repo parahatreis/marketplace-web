@@ -1,5 +1,5 @@
 {
-  "name": "islegtm-client",
+  "name": "islegtm-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
