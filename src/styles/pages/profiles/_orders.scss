@@ -1,0 +1,71 @@
+.orders-section{
+
+    min-height: 30vh;
+
+    .order-list{
+        width: 100%;
+
+        .order-item{
+            margin-bottom: 1rem;
+            border-radius: $border-radius;
+            width: 100%;
+            background-color: $second-color;    
+            display: flex;
+            padding: 2rem 1rem;
+            justify-content: space-between;
+
+            @include tablet-big{
+                flex-wrap: wrap;
+                padding: 1rem 0.5rem;
+            }
+
+            .part{
+                width: 47.5%;
+                display: flex;
+                justify-content: space-between;
+
+                @include tablet-big{
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1.5fr 1fr;
+                }
+            }
+
+            .p-1{
+                @include tablet-big{
+                    width: 100%;
+                    padding-bottom: 2rem;
+                }
+            }
+
+            .info{
+                font-size: 1rem;
+
+                @include tablet-big{
+                    font-size: 0.8rem;
+                }
+
+                .info-title{
+                    padding-bottom: 0.5rem;
+                    color: $text-second;
+                }
+                .error{
+                    color: red;
+                }
+                .success{
+                    color: green;
+                }
+                .warning{
+                    color: orange;
+                }
+                .primary{
+                    color: rgb(0, 60, 129);
+                }
+                .total{
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

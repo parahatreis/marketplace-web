@@ -1,0 +1,95 @@
+
+section.filter-section {
+
+   transition: left 0.5s;
+
+   aside.filter-wrapper {
+      width: 220px;
+      // height: 500px;
+      background-color: $second-color;
+      padding: 1rem;
+      z-index: 6;
+      color: $text-first;
+      border-radius: $border-radius ;
+
+      @include tablet {
+         height: 100vh;
+         border-radius: 0 ;
+      }
+
+      p{
+         color: $text-second
+      }
+
+      .filter-inputs{
+         margin-top: 2rem;
+
+         div{
+            margin-bottom: 2rem;
+            select, input, button {
+               background-color: #fff;
+               padding: 0.3rem;
+               border: none;
+               border-radius: $border-radius;
+               color: $text-first;
+               margin-top: 0.5rem;
+               width: 100%;
+            }
+         }
+         .price-range{
+            .rangers{
+               display: flex;
+               align-items: center;
+               span{
+                  display: inline;
+               }
+               input{
+                  width: 90px;
+               }
+            }
+         }
+         .submit-btn{
+            margin-bottom: 0rem;
+            input{
+               width: 100%;
+               background-color: $primary-color;
+               color: white;
+               cursor: pointer;
+            }
+            button{
+               cursor: pointer;
+            }
+         }
+      }
+   }
+   @include tablet {
+      position: fixed;
+      left: -100%;
+      top: 0;
+      // width: 100vw;
+      height: 100vh;
+      z-index: 2;
+   }
+}
+
+.bg-dark {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #000000a3;
+   z-index: 1;
+
+   @include tablet {
+      display: none;
+   }
+}
+
+.filter-active {
+   left: 0% !important;
+}
+.bg-active{
+   display: block;
+}

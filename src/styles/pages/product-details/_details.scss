@@ -1,0 +1,159 @@
+section.details-wrapper{
+   width: 100%;
+   padding-left: 2rem;
+   color: $text-first;
+
+   @include tablet {
+      padding-left: 0rem;
+   }
+
+   .details{
+      div{
+         margin-bottom: 1.2rem;
+         @include mobile {
+            margin-bottom: 0.8rem;
+         }
+      }
+      .brand-name{
+         color: $primary-color;
+         font-weight: 500;
+      }
+      .product-name{
+         color: $text-first;
+         font-size: 1.4rem;
+         @include mobile {
+            font-size: 1.1rem;
+         }
+      }
+      .stock{
+         font-size: 14px;
+         @include mobile {
+            font-size: 12px;
+         }
+      }
+      .stock-danger{
+         color: red;
+      }
+      .stock-success{
+         color: green;
+      }
+      .price-list{
+         display: flex;
+         align-items: center;
+
+         .primary-price{
+            color: $primary-color;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            @include mobile {
+               font-size: 1.3rem;
+            }
+         }
+         .prev-price{
+            color: $text-first;
+            margin: 0;
+            padding-left: 1rem;
+            text-decoration: line-through;
+         }
+      }
+      .size{
+         width: 100%;
+         label{
+            font-size: 15px;
+         }
+         select{
+            background-color: $second-color;
+            padding: 0.3rem;
+            border: none;
+            border-radius: $border-radius;
+            color: $text-first;
+            width: 100px;
+            @include mobile {
+               width: 50%;
+            }
+         }
+      }
+      .add-cart{
+         width: 250px;
+         @include mobile {
+            width: 100%;
+         }
+         
+         .quantity {
+            width: 100%;
+            height: 50px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            padding: 0;
+            @include mobile {
+               height: 40px;
+               font-size: 12px;
+            }
+            span{
+               text-align: center;
+               height: 100%;
+               line-height: 50px;
+               font-size: 1.2rem;
+               font-weight: 600;
+               @include mobile {
+                  line-height: 40px;
+               }
+            }
+            button{
+               background-color: $primary-color;
+               color: white;
+               cursor: pointer;
+               border-radius: $border-radius;
+               border: none;
+               font-size: 18px;
+               
+            }
+         }
+
+         .add-cart-btn{
+            button{
+               width: 100%;
+               height: 50px;
+               background-color: $primary-color;
+               color: white;
+               cursor: pointer;
+               border-radius: $border-radius;
+               border: none;
+               font-size: 15px;
+               @include mobile {
+                  height: 40px;
+                  font-size: 12px;
+               }
+            }
+         }
+         button:hover,
+         button:focus {
+            opacity: 0.7;
+            outline: none;
+         }
+      }
+
+      aside{
+         width: 100%;
+         padding: 1rem;
+         background-color: $second-color;
+         h3{
+            color: $primary-color;
+            font-weight: normal;
+            margin: 0;
+            margin-bottom: 1rem;
+            @include mobile {
+               font-size: 1rem;
+            }
+         }
+         p{
+            font-size: 14px;
+            line-height: 25px;
+            @include mobile {
+               font-size: 0.7rem;
+            }
+         }
+      }
+   }
+}

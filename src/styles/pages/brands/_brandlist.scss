@@ -1,0 +1,81 @@
+section.brands-wrapper{
+   padding-top: 0.5rem;
+
+   min-height: 40vh;
+
+   .brand-list{
+      .brand-list-wrapper{
+         display: grid;
+         grid-template-columns: minmax(130px, 1fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(130px, 1fr);
+         grid-gap: 1rem;
+
+         @include tablet-big{
+            grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr);
+         }
+
+         @include tablet-mini {
+            grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr) minmax(120px, 1fr);
+         }
+
+         @include mobile {
+            grid-template-columns: minmax(80px, 1fr) minmax(80px, 1fr) minmax(80px, 1fr);
+            grid-gap: 0.4rem;
+         }
+
+         a.brand-item{
+            width: 100%;
+            border-radius: 5px;
+            background: #FFFFFF;
+            box-shadow: $shadow;
+
+            &:hover {
+               .image-wrapper img {
+                  transform: scale(1.1);
+               }
+            }
+
+            .image-wrapper {
+               height: 130px;
+               width: 100%;
+               @include tablet-big {
+                  height: 110px;
+               }
+
+               @include tablet-mini {
+                  height: 100px;
+               }
+
+               @include mobile {
+                  height: 80px;
+               }
+               span{
+                  height: 100%;
+                  width: 100%;
+                  overflow: hidden;
+
+                  img{
+                     height: 100%;
+                     width: 100%;
+                     border-radius: 5px 5px 0px 0px;
+                     object-fit: cover;
+                     transition: 0.5s;
+                  }
+               }
+            }
+            .brand-name{
+               color: $text-first;
+               text-align: center;
+               margin: 0.5rem 0;
+
+               @include tablet {
+                  font-size: 0.9rem;
+               }
+
+               @include mobile {
+                  font-size: 0.7rem;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,46 @@
+$primary-color : #07203A;
+$second-color : #EAEAF4;
+$sky-blue : #0095FF;
+$text-first : #333333;
+$text-second : #666666;
+
+$border-radius : 5px;
+$shadow : rgba(149, 157, 165, 0.2) 0px 8px 30px;
+$mobile : 425px;
+$tablet-mini : 680px;
+$tablet : 870px;
+$tablet-big : 950px;
+$desktop : 1200px;
+
+// responsive name : desktop
+@mixin desktop {
+   @media (max-width: #{$desktop}) {
+      @content;
+   }
+}
+
+// responsive name : desktop
+@mixin tablet {
+   @media (max-width: #{$tablet}) {
+      @content;
+   }
+}
+// responsive name : desktop
+@mixin tablet-mini {
+   @media (max-width: #{$tablet-mini}) {
+      @content;
+   }
+}
+// responsive name : desktop
+@mixin tablet-big {
+   @media (max-width: #{$tablet-big}) {
+      @content;
+   }
+}
+
+// responsive name : mobile
+@mixin mobile {
+   @media (max-width: #{$mobile}) {
+      @content;
+   }
+}

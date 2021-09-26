@@ -1,0 +1,144 @@
+header{
+   width: 100%;
+   padding-top: 1rem;
+   font-size: 1rem;
+
+   @include mobile {
+      padding-top: 0.7rem;
+   }
+
+   @include tablet {
+      font-size: 0.7rem;
+   }
+   
+   .header-block{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      
+      div a{
+         color: $text-second;
+
+         img{
+            @include tablet {
+               height: 0.7rem;
+            }
+         }
+        
+
+         &:hover{
+            color: $primary-color;
+         }
+      }
+      div .l-pad{
+         display: inline;
+         padding-left: 1.2rem;
+          @include tablet {
+            padding-left: 0.5rem;
+          }
+          @include mobile {
+            padding-left: 0rem;
+          }
+      }
+      .left-side {
+         .hide-sm{
+            @include mobile {
+               display: none;
+            }
+         }
+      }
+
+      .right-side{
+         display: flex;
+         align-items: center;
+
+         .header-link{
+            padding-left: 1.2rem;
+            display: flex;
+            align-items: center;
+
+            img{
+               padding-right: 0.3rem;
+
+               @include tablet {
+                  height: 0.7rem;
+               }
+            }
+
+            @include tablet{
+               padding-left: 0.5rem;
+            }
+         }
+
+         
+         .menu,
+         .drop-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+         }
+         .menu{
+            padding-left: 1.2rem;
+             @include tablet {
+               padding-left: 0.5rem;
+             }
+         }
+
+         .menu-item {
+            display: block;
+            position: relative;
+            top: 0;
+            right: 0;
+         }
+
+         .menu-item span {
+            text-decoration: none;
+            color: $text-second;
+            display: inline;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            img{
+               padding-right: 0.3rem;
+
+               @include tablet {
+                  height: 0.7rem;
+               }
+            }
+            &:hover {
+               color: $primary-color;
+            }
+         }
+
+         .drop-menu {
+            display: none;
+            position: absolute;
+            right: 0px;
+            background: #fff;
+            border-radius: $border-radius;
+            z-index: 1000;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+         }
+
+         .drop-menu-item {
+            width: 100%;
+         }
+
+         .drop-menu-item:hover {
+            background-color: #eee;
+         }
+
+         .drop-menu-item div {
+            display: block;
+            color: #555;
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+         }
+
+         .menu-item:hover .drop-menu {
+            display: block;
+         }
+      }
+   }
+}

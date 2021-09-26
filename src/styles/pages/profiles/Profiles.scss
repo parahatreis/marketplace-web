@@ -1,0 +1,29 @@
+
+.tabs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    div{
+        margin: 2rem 0.5rem;
+
+        .active{
+            background-color: $sky-blue;
+            color: #fff;
+        }
+    }
+    div a{
+        padding: 1rem;
+        background-color: $second-color;
+        border-radius: $border-radius;
+
+        @include tablet-big{
+            font-size: 0.8rem
+        }
+    }
+    
+}
+
+
+@import './account'; 
+@import './orders';

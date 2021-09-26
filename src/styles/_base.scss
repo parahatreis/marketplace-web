@@ -1,0 +1,115 @@
+@font-face {
+   src: url('../fonts/manrope/Manrope-Regular.ttf');
+   font-family: regular;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: regular, sans-serif;
+}
+* a {
+   text-decoration: none;
+   color: $primary-color;
+}
+html{
+   scroll-behavior: smooth;
+}
+body{
+   min-height: 100vh;
+}
+.container {
+   width: 95%;
+   max-width: 1200px;
+   margin: auto auto;
+   height: auto;
+}
+// About
+.page-title {
+   h2 {
+      text-align: center;
+      color: $text-first;
+      font-weight: 600;
+      font-size: 1.5rem;
+      padding : 1rem;
+
+      @include tablet {
+         font-size: 1rem;
+         padding : 0.5rem;
+      }
+   }
+}
+.about-section{
+   .content-section{
+      article{
+         line-height: 1.8rem;
+         padding: 1rem 0;
+         color: $text-second;
+      }
+   }
+}
+
+/* width */
+::-webkit-scrollbar {
+   width: 10px;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   border-radius: $border-radius;
+ }
+  
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background: rgb(179, 179, 179); 
+   border-radius: $border-radius;
+ }
+
+.splide__arrow { 
+   background: rgba(200, 200, 200, 0.5) !important;
+
+   @include tablet {
+       display: none !important;
+   }
+}
+.splide__slide{
+   border-radius: $border-radius;
+}
+.splide-prev-btn{
+   left : -0.75rem !important;
+}
+.splide-next-btn{
+   right : -0.75rem !important;
+}
+
+.not-info{
+   text-align: center;
+   color: $text-second;
+   height: 50vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.css-1eg0sfo-skeletonStyles-Skeleton {
+    background-color: $second-color !important;
+    background-image: linear-gradient( 
+90deg
+,#eee,#efeff7,#eee ) !important;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1;
+    width: 100%;
+    -webkit-animation: animation-bzdot9 1.2s ease-in-out infinite;
+    animation: animation-bzdot9 1.2s ease-in-out infinite;
+}
+
+.d-block{
+   display: block;
+}
+.d-none {
+   display: none;
+}

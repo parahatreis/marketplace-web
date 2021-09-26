@@ -1,0 +1,226 @@
+section.product-row{
+   margin-top: 2rem;
+   width: 100%;
+
+   @include tablet {
+      margin-top: 1rem;
+   }
+
+   h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+
+      a {
+         font-weight: 600;
+         font-size: 1.1rem;
+         color: $text-second;
+         transition: 0.5s;
+
+         @include mobile {
+            font-size: 0.8rem;
+         }
+
+         &:hover {
+            color: $primary-color;
+            margin-left: 30px;
+         }
+      }
+   }
+
+   .product-list{
+      // display: flex;
+      display: grid;
+      grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+      grid-gap: 15px;
+      width: 100%;
+      // height: auto;
+
+      @include tablet {
+         grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr) minmax(180px, 1fr);
+         grid-gap: 10px;
+      }
+      @include tablet-mini {
+         grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr);
+         grid-template-rows: 1fr 1fr;
+         grid-gap: 5px;
+      }
+
+      .product-item-block{
+         width: 100%;
+         // min-width: 200px;
+         // max-width: 285px;
+         overflow: hidden;
+         // margin-right: 15px;
+         border-radius: 5px ;
+         box-shadow: $shadow;
+
+         .product-item {
+            color: inherit;
+            width: 100%;
+
+            .image-wrapper {
+               width: 100%;
+               height: 100%;
+               display: block;
+               overflow: hidden;
+               position: relative;
+               cursor: pointer;
+
+               &:hover {
+                  img.product-image {
+                     transform: scale(1.2);
+                  }
+               }
+
+               .percentage {
+                  position: absolute;
+                  top: 10px;
+                  left: 10px;
+                  width: 40px;
+                  height: 40px;
+                  background-color: $sky-blue;
+                  color: #fff;
+                  line-height: 40px;
+                  text-align: center;
+                  border-radius: 50%;
+                  font-size: 0.75rem;
+                  z-index: 1;
+
+                  @include mobile {
+                     font-size: 0.5rem;
+                     width: 30px;
+                     height: 30px;
+                     line-height: 30px;
+                  }
+               }
+
+               img.product-image {
+                  width: 100%;
+                  height: auto;
+                  // object-fit:cover ;
+                  width: 100%;
+                  transition: transform 0.5s;
+
+               }
+            }
+
+            .upper-block {
+               padding: 0.7rem;
+
+               @include mobile {
+                  padding: 0.4rem;
+               }
+
+               .brand-name {
+                  color: $text-second;
+                  font-size: 12px;
+
+                  @include mobile {
+                     font-size: 9px;
+                  }
+               }
+
+               .product-name {
+                  color: $text-first;
+                  font-size: 16px;
+                  padding: 0.5rem 0;
+                  display: block;
+
+                  @include mobile {
+                     font-size: 12px;
+                  }
+
+                  &:hover {
+                     color: $primary-color;
+                  }
+               }
+
+               .floor-block {
+                  display: flex;
+                  min-height: 50px;
+                  justify-content: space-between;
+                  align-items: center;
+
+                  .price {
+                     .new-price {
+                        color: $primary-color;
+                        font-size: 18px;
+                        font-weight: 600;
+
+                        @include mobile {
+                           font-size: 14px;
+                        }
+                     }
+
+                     .old-price {
+                        color: $text-second;
+                        font-size: 12px;
+                        font-weight: normal;
+                        text-decoration: line-through;
+
+                        // padding-left: 0.5rem;
+                        @include mobile {
+                           font-size: 10px;
+                        }
+                     }
+                  }
+
+                  .cart-btn-block {
+                     display: block;
+
+                     @include tablet {
+                        display: block;
+                     }
+
+                     button {
+                        background-color: white;
+                        border: none;
+                        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+                        border-radius: $border-radius;
+                        width: 40px;
+                        height: 40px;
+                        color: $primary-color;
+                        cursor: pointer;
+                        color: red;
+
+                        @include mobile {
+                           width: 25px;
+                           height: 25px;
+                        }
+
+                        &:focus,
+                        &:hover {
+                           outline: none;
+                            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+                        }
+
+                        .btn-block {
+                           width: 100%;
+                           height: 100%;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+
+                           i {
+                              color: green;
+                           }
+
+                           img {
+                              width: 20px;
+                              height: auto;
+
+                              @include mobile {
+                                 width: 12px;
+                              }
+                           }
+                        }
+
+                     }
+                  }
+               }
+
+            }
+         }
+         }
+      }
+}

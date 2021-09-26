@@ -1,0 +1,175 @@
+/* global styles */
+$text-first:darken(grey, 25%);
+$v-gap: 30px;
+$border-grey: lighten(grey, 38%);
+$light-grey: lighten(grey, 44%);
+
+//-----
+
+
+.nav-dropdown {
+   div, a {
+      color: $text-second;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      @include tablet {
+         font-size: 0.8rem;
+      }
+
+      &:hover {
+         text-decoration: none;
+         color: darken(grey, 25%);
+      }
+   }
+
+   ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+      transition: all .4s;
+   }
+
+   // Level 1
+   .level-1 {
+      >li {
+         float: left;
+
+         &:not(:last-of-type)>a {
+            border-right: none;
+         }
+
+         >div {
+            display: block;
+            // border: 1px solid $border-grey;
+            background-color: $second-color;
+            padding: $v-gap/2.5;
+            border-radius: $border-radius;
+
+            @include tablet {
+               padding: $v-gap/3;
+            }
+            @include mobile {
+               padding: $v-gap/4.5 $v-gap/3;
+            }
+            
+
+            &:hover {
+               opacity: 0.7;
+            }
+         }
+      }
+   }
+
+   // end level 1
+
+   // sublevels general:
+   .level-1 ul {
+      position: absolute;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 100;
+      box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.2);
+
+      div,a {
+         padding: 10px;
+         display: block;
+         background: white;
+         border: 1px solid rgba($border-grey, .6);
+         border-bottom: none;
+         font-size: 0.9rem;
+         cursor: pointer;
+         
+         @include tablet {
+            font-size: 0.8rem;
+         }
+          @include mobile {
+             font-size: 0.7rem;
+          }
+
+         &:hover {
+            background-color: darken(#fff, 3%);
+         }
+      }
+   }
+
+   // level 2
+   .has-level-2 {
+      position: relative;
+
+      img{
+         height: 10px;
+      }
+
+      >a {
+         padding-right: $v-gap + 12 !important;
+         @include tablet {
+            padding-right: $v-gap + 10 !important;
+         }
+         border-radius: 5px 0px 0px 5px;
+         font-size: 0.9rem;
+         &:after {
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            right: $v-gap/2;
+            position: absolute;
+            border-style: solid;
+            border-width: 6px 6px 0 6px;
+            border-color: rgba($text-first, .4) transparent transparent transparent;
+         }
+      }
+
+      &:hover {
+         .level-2 {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            min-width: 150px;
+         }
+      }
+   }
+
+   .level-2 {
+      transform: translateY(30px);
+   }
+
+   // level 3
+   .has-level-3 {
+      position: relative;
+
+      >a {
+         padding-right: $v-gap +12 !important;
+         // font-size: 0.9rem;
+
+         &:after {
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            right: $v-gap/2;
+            position: absolute;
+            border-style: solid;
+            border-width: 6px 0 6px 6px;
+            border-color: transparent transparent transparent rgba($text-first, .4);
+         }
+      }
+
+      &:hover {
+         .level-3 {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+         }
+      }
+   }
+
+   .level-3 {
+      top: 0;
+      left: 100%;
+      transform: translateX(30px);
+   }
+}
+
+// end nav dropdown

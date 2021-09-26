@@ -1,0 +1,236 @@
+.navbar-wrapper {
+   width: 100%;
+   background-color: #fff;
+   transition: all 0.5s ease;
+}
+nav{
+   display: flex;
+   justify-content: space-between;
+   padding: 1rem 0;
+
+   @include tablet {
+      margin-bottom: 4rem;
+   }
+   @include mobile {
+      margin-bottom: 2.7rem;
+   }
+
+   .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+         height: 50px;
+         @include tablet {
+            height: 35px;
+         }
+         @include mobile {
+            height: 30px;
+         }
+   }
+   }
+   .search-wrapper{
+      width: 700px;
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
+
+      .brand-button{
+         margin-right: 10px;
+         @include mobile{
+            margin-right : 5px;
+         }
+         background-color: $second-color;
+         padding: 12px 1rem;
+         font-size: 0.9rem;
+         border-radius: $border-radius;
+         color: $text-second;
+
+         @include tablet{
+            padding: 10px;
+            font-size: 0.8rem;
+         }
+
+         @include mobile{
+            padding : 6.66667px 10px;
+            font-size: 12px;
+         }
+
+         &:hover {
+            opacity: 0.7;
+         }
+      }
+
+      @include tablet{
+         position: absolute;
+         top: 95px;
+         width: 95%;
+         margin: 0;
+      }
+      @include mobile {
+         top: 77px;
+      }
+
+      .input-block{
+         width: 100%;
+         display: flex;
+         background-color: $second-color;
+         border-radius: 5px;
+         
+         form {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            input {
+               border: none;
+               height: 100%;
+               background-color: $second-color;
+               border-left: 0.5px solid darken($color: $second-color, $amount: 10);
+               padding-left: 1rem;
+               width: 100%;
+               font-size: 1rem;
+               color: $text-second;
+
+               @include mobile {
+                  padding-left: 0.5rem;
+                  font-size: 0.7rem;
+               }
+
+               &:focus {
+                  outline: none;
+               }
+            }
+            button {
+               border: none;
+               padding: 0 1.5rem;   
+               font-size: 1rem;
+               cursor: pointer;
+               color: $text-second;
+               background-color: $second-color;
+               border-radius: 0px 5px 5px 0px;
+               display: flex;
+               align-items: center;
+
+               img{
+                  @include mobile {
+                     height: 12px;
+                   }
+               }
+
+               @include tablet {
+                  padding: 0 1rem;
+               }
+                @include mobile {
+                  font-size: 0.8rem;
+                }
+
+               &:focus , &:hover {
+                  outline: none;
+                  opacity: 0.7;
+               }
+            }
+         }
+      }
+   }
+
+   .right-side{
+      height: 100%;
+      margin: auto 0;
+      .links {
+         display: flex;
+         align-items: center;
+
+         .icons {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            a{
+               margin-left: 1.2rem;
+               line-height: 1.5rem;
+               display: flex;
+               align-items: center;
+
+               @include tablet {
+                     line-height: 1.2rem;
+               }
+
+               @include mobile {
+                  line-height: 1rem;
+               }
+
+               &:hover{
+                  opacity: 0.7;
+               }
+            }
+            .cart-icon{
+               position: relative;
+
+               img{
+                    height: 30px;
+                    @include tablet {
+                        height: 22px;
+                    }
+                    @include mobile {
+                        height: 18px;
+                    }
+               }
+
+               .cart-quantity{
+                  position: absolute;
+                  top: -10px;
+                  right: -7px;
+                  width: 20px;
+                  height: 20px;
+                  background-color: $sky-blue;
+                  font-size: 10px;
+                  border-radius: 50%;
+                  text-align: center;
+                  line-height: 20px;
+                  color: #fff;
+
+                  @include mobile {
+                     top: -5px;
+                     right: -5px;
+                     width: 14px;
+                     height: 14px;
+                     font-size: 8px;
+                     line-height: 14px;
+                  }
+               }
+            }
+         }
+         div{
+            padding: 0;
+         }
+         div i{
+            font-size: 1.5rem;
+            color: $text-second;
+             @include tablet {
+               font-size: 1.2rem;
+             }
+            @include mobile {
+               font-size: 1rem;
+            }
+         }
+      }
+   }
+}
+
+.active-navbar-wrapper{
+   box-shadow: 0 2px 2px rgb(240, 240, 240);
+   position: fixed;
+   z-index: 10;
+   top: 0;
+   animation: sticky-animation .5s forwards linear;
+}
+
+@keyframes sticky-animation {
+   0% {
+      transform: translateY(-100%);
+   }
+
+   100% {
+      transform: translateY(0);
+   }
+}

@@ -1,0 +1,99 @@
+.modal-wrapper{
+   width: 100%;
+   max-width: 400px;
+   padding: 1.2rem;
+   position: relative;
+   text-align: center;
+
+   @include mobile{
+      max-width: 300px;
+      padding: 1rem;
+   }
+
+   .close-btn{
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      button{
+         background: none;
+         border: none;
+         font-size: 1.2rem;
+         color: $text-second;
+         cursor: pointer;
+
+         &:hover{
+            color: red;
+         }
+      }
+   }
+   h3{
+      font-size: 1.5rem;
+      margin: 1rem;
+      color: $text-first;
+
+      @include mobile {
+         font-size: 1.1rem;
+      }
+   }
+   p{
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: $text-second;
+
+      @include mobile {
+         font-size: 0.8rem;
+      }
+   }
+
+   .form-block{
+      width: 100%;
+      form{
+         width: 100%;
+         .modal-input{
+            width: 100%;
+
+            input{
+               width: 100%;
+               height: 40px;
+               margin-bottom: 1rem;
+               border : none;
+               border-radius: $border-radius;
+               background-color: $second-color;
+               text-align: center;
+               font-size: 1rem;
+
+               @include mobile {
+                  font-size: 0.8rem;
+               }
+
+               &:focus{
+                  outline: none;
+               }
+            }
+            .submit-btn{
+               background-color: $primary-color;
+               color: white;
+               cursor: pointer;
+            }
+         }
+         .code-input{
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+               -webkit-appearance: none;
+               margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+               -moz-appearance: textfield;
+            }
+         }
+      }
+   }
+
+}
+
+.ReactModal__Overlay{
+   background-color: rgba($color: #000000, $alpha: 0.5) !important;
+}
