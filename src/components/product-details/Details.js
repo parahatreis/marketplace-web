@@ -56,23 +56,26 @@ const Details = ({ product,addProduct, removeProduct, incrementProductQuantity,d
          }
          else setSelected(false);
       }
-   }, [cart, product_id,stockNumber])
+   }, [cart, product_id])
 
    const increment = () => {
       if(quantity >= stockNumber){
          toast.warn('Artykmac Haryt mukdary yok!')
       }
-      else{
+      else {
+         toast.success('Haryt mukdary artdyryldy!');
          incrementProductQuantity(product)
       }
    }
    const decrement = () => {
-      if(quantity === 1){
+      if (quantity === 1) {
+         toast.error('Haryt sebedetden ayryldy!')
          removeProduct(product);
          setCurrentSize('');
          setHasSize(false)
       }
-      else{
+      else {
+         toast.warn('Haryt mukdary azaldy!');
          decrementProductQuantity(product)
       }
    }
@@ -82,8 +85,10 @@ const Details = ({ product,addProduct, removeProduct, incrementProductQuantity,d
          if (currentSize) {
             let newProduct = product;
             newProduct.sizeNameId = currentSize;
-            return addProduct(product) 
+            toast.success('Haryt sebede goshuldy!');
+            return addProduct(newProduct);
          }
+         toast.success('Haryt sebede goshuldy!');
          return addProduct(product);
       }
       else{

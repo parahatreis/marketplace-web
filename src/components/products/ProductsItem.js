@@ -5,6 +5,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from 'react-router-dom';
 import { toast } from "react-toastify";
+import {useDispatch} from 'react-redux'
 // 
 import PlaceholderImage from '../../img/placeholderISLEG.png'
 import CartSVG from '../../img/icons/Cart-B.svg';
@@ -20,6 +21,7 @@ const HomeProductItem = ({ product,addProduct, removeProduct, cart : {cart}, lan
    const [selected, setSelected] = useState(false);
    const [name, setName] = useState(null);
    const [isImageLoaded, setImageLoaded] = useState(false);
+   const dispatch = useDispatch();
 
    const {
       product_id,
@@ -51,16 +53,32 @@ const HomeProductItem = ({ product,addProduct, removeProduct, cart : {cart}, lan
    }, [cart, product_id])
 
    const addCart = () => {
-      if(!selected){
-         setSelected(true);
-         toast.success('Haryt sebede goshuldy!')
-         return addProduct(product);
+      if (product.stocks) {
+         if (product.stocks[0].sizeTypeId) {
+            dispatch({
+               type: 'SET_MODAL_OPENED',
+               payload: true
+            });
+            dispatch({
+               type: 'SET_SELECTED_PRODUCT',
+               payload: product
+            });
+            return;
+         } else {
+            if (!selected) {
+               setSelected(true);
+               toast.success('Haryt sebede goshuldy!')
+               return addProduct(product);
+            }
+            if(selected){
+               setSelected(false);
+               toast.error('Haryt sebedetden ayryldy!')
+               return removeProduct(product);
+            }
+         }
       }
-      if(selected){
-         setSelected(false);
-         toast.error('Haryt sebedetden ayryldy!')
-         return removeProduct(product);
-      }
+
+      
    }
 
    // Change api lang
@@ -73,7 +91,6 @@ const HomeProductItem = ({ product,addProduct, removeProduct, cart : {cart}, lan
    }, [lang, product_name_tm, product_name_ru, product_name_en]);
 
    const handleAfterLoad = () => {
-      console.log(product_name_en);
       setImageLoaded(true);
    }
 
@@ -114,7 +131,6 @@ const HomeProductItem = ({ product,addProduct, removeProduct, cart : {cart}, lan
                      {
                      stocks &&
                      stocks[0].stock_quantity > 0 &&
-                     !stocks[0].sizeTypeId &&
                      <div className="cart-btn-block">
                            <button data-product-id="222" onClick={(e) => addCart()} >
                               <div className="btn-block">

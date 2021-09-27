@@ -25,6 +25,14 @@ body{
    margin: auto auto;
    height: auto;
 }
+button:disabled{
+   cursor: not-allowed !important;
+   opacity: 0.5;
+
+   &:hover{
+      opacity: 0.5 !important;
+   }
+}
 // About
 .page-title {
    h2 {

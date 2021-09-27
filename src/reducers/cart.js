@@ -37,7 +37,7 @@ export default function usersReducer(state = initialState, action) {
             if (product.sizeNameId) {
                newArr = state.cart.map((val) => {
                   if(val.sizeNameId){
-                     if (val.sizeNameId === product.sizeNameId) {
+                     if (val.sizeNameId === product.sizeNameId && val.product_id === product.product_id) {
                         isExists = true;
                         return val = {
                            ...val,
@@ -48,7 +48,9 @@ export default function usersReducer(state = initialState, action) {
                   }
                   return val;
                });
-               if(!isExists) newArr.push(product)
+               if (!isExists) {
+                  newArr.push(product)
+               }
             }
             else {
                newArr = [...state.cart, product]
@@ -57,7 +59,6 @@ export default function usersReducer(state = initialState, action) {
          else {
             newArr.push(product)
          }
-         
          localStorage.setItem('smCart', JSON.stringify(newArr));
          return {
             ...state,
@@ -67,15 +68,17 @@ export default function usersReducer(state = initialState, action) {
       case DELETE_PRODUCT:
          const productDel = payload;
          let filteredArr = []
-
-
          if(productDel.sizeNameId){
-            filteredArr = state.cart.filter((product) => product.sizeNameId !== productDel.sizeNameId);
+            filteredArr = state.cart.filter((product) => {
+               if (product.sizeNameId === productDel.sizeNameId && product.product_id === productDel.product_id) {
+                  return null;
+               }
+               return product;
+            });
          }
          else{
             filteredArr = state.cart.filter((product) => product.product_id !== productDel.product_id);
          }
-
          localStorage.setItem('smCart', JSON.stringify(filteredArr));
          return {
             ...state,

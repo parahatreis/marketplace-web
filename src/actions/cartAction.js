@@ -25,7 +25,6 @@ export const addProduct = (product) => async dispatch => {
         ...product,
         quantity : 1
     }
-
     try {
         dispatch({
             type: ADD_PRODUCT,

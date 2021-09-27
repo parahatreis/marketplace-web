@@ -23,6 +23,7 @@ import setAuthToken from './utils/setAuthToken';
 import apiPath from './utils/apiPath';
 // 
 import Spinner from './components/layouts/Spinner';
+import Modal from './components/layouts/Modal';
 
 axios.defaults.baseURL = apiPath();
 axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
@@ -165,6 +166,7 @@ const App = () => {
                   <PrivateRoute exact path="/change-password" component={ChangePassword} />
                </Switch>
             </div>
+            <Modal />
             <Footer />
          </Router>
    </Provider>

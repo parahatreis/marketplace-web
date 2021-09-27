@@ -9,6 +9,8 @@ import {
    SET_FILTER,
    CURRENT_PRODUCT,
    CLEAR_PRODUCTS_DATA,
+   SET_SELECTED_PRODUCT,
+   SET_MODAL_OPENED
 } from '../actions/types';
 
 
@@ -19,9 +21,11 @@ const initialState = {
    sortBy: null,
    page_number: 0,
    product_brands: [],
-   filter : {},
+   filter: {},
    loading: false,
-   current_product : {}
+   current_product: {},
+   modalOpened: false,
+   selectedProduct: null,
 }
 
 export default function productsReducer(state = initialState, action) {
@@ -85,6 +89,16 @@ export default function productsReducer(state = initialState, action) {
          return {
             ...state,
             filter: payload,
+         }
+      case SET_MODAL_OPENED:
+         return {
+            ...state,
+            modalOpened: payload,
+         }
+      case SET_SELECTED_PRODUCT:
+         return {
+            ...state,
+            selectedProduct: payload,
          }
       default:
          return state;

@@ -10,7 +10,8 @@ const customStyles = {
       bottom: 'auto',
       marginRight: '-50%',
       padding: '0px',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      zIndex: "16"
    },
    paragraph: {
       textAlign: 'left'
@@ -35,7 +36,6 @@ const TermsModal = ({termsModalIsOpen,termscCloseModal}) => {
          <div className="modal-wrapper">
             <div className="close-btn">
                <button onClick={termscCloseModal}>
-                  <i className="far fa-times-circle"></i>
                   Close
                </button>
             </div>

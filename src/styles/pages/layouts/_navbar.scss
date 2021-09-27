@@ -2,11 +2,16 @@
    width: 100%;
    background-color: #fff;
    transition: all 0.5s ease;
+   @include tablet{
+      margin-bottom: 2.5rem;
+   }
 }
 nav{
    display: flex;
    justify-content: space-between;
    padding: 1rem 0;
+   position: relative;
+   margin: 0;
 
    @include tablet {
       margin-bottom: 4rem;
@@ -34,6 +39,13 @@ nav{
       margin: 0 1rem;
       display: flex;
       align-items: center;
+      z-index: 15;
+      @include tablet {
+         position: absolute;
+         top: 60px;
+         width: 100%;
+         margin: 0px;
+      }
 
       .brand-button{
          margin-right: 10px;
@@ -59,16 +71,6 @@ nav{
          &:hover {
             opacity: 0.7;
          }
-      }
-
-      @include tablet{
-         position: absolute;
-         top: 95px;
-         width: 95%;
-         margin: 0;
-      }
-      @include mobile {
-         top: 77px;
       }
 
       .input-block{
@@ -223,6 +225,9 @@ nav{
    z-index: 10;
    top: 0;
    animation: sticky-animation .5s forwards linear;
+   @include tablet{
+      height: 105px;
+   }
 }
 
 @keyframes sticky-animation {
