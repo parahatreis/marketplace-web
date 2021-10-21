@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import Modal from 'react-modal';
 import axios from 'axios';
 import { toast } from "react-toastify";
+import bcrypt from 'bcryptjs';
 // 
 import { register } from '../../actions/usersAction';
 import TermsModal from './TermsModal';
@@ -74,6 +75,12 @@ const Register = ({ register, history, users:  {loading} }) => {
    const termscCloseModal = () => setTermsIsOpen(false);
 
 
+   const closeVerifyModal = () => {
+      setCode(null);
+      setUserVerifCode('');
+      setIsOpen(false);
+   }
+
    // Get Input value 
    const onChange = (e) => setUserVerifCode(e.target.value)
 
@@ -84,7 +91,7 @@ const Register = ({ register, history, users:  {loading} }) => {
 
       if (res === 200) {
          sendVerifyCode(user_phone);
-         setUserData(data)
+         setUserData(data);
       }
    };
 
@@ -135,14 +142,17 @@ const Register = ({ register, history, users:  {loading} }) => {
                console.log(err)
                return toast.error('SMS ugradylyp bilinmedi!');
          }
+      } finally {
+         setLocalLoading(false);
       }
    }
 
    // Submit Verification Code
-   const submitCode = (e) => {
+   const submitCode = async (e) => {
       e.preventDefault();
       // Check Verification code
-      if(code === parseInt(userVerifCode)){
+      const comparedCode = bcrypt.compareSync(userVerifCode, code);
+      if (comparedCode) {
          setVerifyCodeLocalLoading(true);
          register(userData).then((status) => {
                if(status === 200){
@@ -158,7 +168,6 @@ const Register = ({ register, history, users:  {loading} }) => {
       else{
          toast.error('Dogrulama kody ýalňyş!');
       }
-      setLocalLoading(false)
    }
 
    return (
@@ -306,11 +315,15 @@ const Register = ({ register, history, users:  {loading} }) => {
                            <div className="modal-input">
                            <input 
                               type="submit"
-                              className="submit-btn"
+                              className={`submit-btn ${verifyCodeLocalLoading ? 'opacity-active' : ''}`}
                               value={verifyCodeLocalLoading ? 'Yuklenyar' : 'Kody giriz'}
                               disabled={verifyCodeLocalLoading}
-                              style={{opacity : `${verifyCodeLocalLoading ? 0.5 : 1}`}}
                            />
+                           <button 
+                              type="button"
+                              className="cancel-btn"
+                              onClick={closeVerifyModal}
+                           >Cancel</button>
                            </div>
                      </form>
                   </div>

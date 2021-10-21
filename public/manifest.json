@@ -1,0 +1,24 @@
+{
+  "short_name": "ISLEGTM",
+  "name": "ISLEG - onlaýn söwda",
+  "icons": [{
+      "src": "ico-isleg.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "ico-isleg.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ico-isleg.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

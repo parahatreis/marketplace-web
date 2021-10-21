@@ -2,6 +2,7 @@
   "name": "islegtm-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -36,6 +37,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "serve": "^12.0.1",
     "source-map-explorer": "^2.5.2",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.4",
@@ -46,7 +48,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "cross-env npm run-script build && serve build",
+    "serve": "serve build"
   },
   "eslintConfig": {
     "extends": [
@@ -67,6 +71,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

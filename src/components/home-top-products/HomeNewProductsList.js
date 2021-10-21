@@ -25,7 +25,7 @@ const HomeNewProductsList = ({ newProducts ,loading, t }) => {
                {
                   loading &&
                   window.innerWidth >= 1200 &&
-                     Array(4).fill().map((item,index) => (
+                     Array(2).fill().map((item,index) => (
                         <SkeletonProducts key={index} />
                      ))
                }

@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { HashRouter as Router, Route, Switch} from 'react-router-dom';
 // Styles
 import './styles/style.scss';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
