@@ -16,7 +16,7 @@ import TermsModal from './TermsModal';
 const SignupSchema = Yup.object().shape({
    user_name: Yup.string()
       .min(2, 'Too Short!')
-      .max(25, 'Too Long!')
+      .max(50, 'Too Long!')
       .required('Required'),
    user_phone: Yup.string()
       .min(8, 'Invalid Number!')
@@ -173,7 +173,9 @@ const Register = ({ register, history, users:  {loading} }) => {
    return (
       <section className="auth-wrapper">
          <div className="auth-block">
-         <h1>Agza bolmak</h1>
+            <div className="page-title">
+               <h2>Agza bolmak</h2>
+            </div>
          <div className="auth-box">
          <Formik
                initialValues={{

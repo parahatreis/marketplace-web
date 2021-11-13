@@ -46,7 +46,9 @@ const Login = ({ login, users : {isAuthenticated, loading} }) => {
    return (
       <section className="auth-wrapper">
          <div className="auth-block">
-            <h1>Iceri girmek</h1>
+            <div className="page-title">
+               <h2>Iceri girmek</h2>
+            </div>
             <div className="auth-box">
                <Formik
                   initialValues={{

@@ -18,7 +18,7 @@ const carouselOptions = {
 
 const Carousel = ({banners}) => {
     return (
-        <div>
+        <div className="p-top-1">
             <Splide options={carouselOptions}>
                 {
                     banners &&

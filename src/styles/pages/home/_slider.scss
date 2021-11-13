@@ -19,6 +19,14 @@
       }
    }
 }
+
+.p-top-1 {
+   padding-top: 0rem; 
+
+   @include tablet {
+      padding-top: 0.5rem;
+   }
+}
 // .carousel .control-next.control-arrow:before {
 //    @include mobile{
 //       border-left: 4px solid #fff !important;

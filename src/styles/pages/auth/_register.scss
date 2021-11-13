@@ -98,6 +98,24 @@ section.auth-wrapper{
                      -moz-appearance: textfield;
                   }
                }
+
+               textarea{
+                  width: 100%;
+                  min-height: 120px;
+                  border: none;
+                  border-radius: $border-radius;
+                  padding: 10px;
+                  font-size: 1rem;
+                  margin-top: 0.5rem;
+                  resize: none;
+                  @include mobile {
+                     font-size: 0.8rem;
+                     height: 40px;
+                  }
+                  &:focus{
+                     outline: none;
+                  }
+               }
             }
             .btn-block{
                input{

@@ -138,7 +138,7 @@ const App = () => {
          draggable
          pauseOnHover
          limit={3}
-            />
+      />
          <Navbar />
          <div className="container">
                <Switch>
