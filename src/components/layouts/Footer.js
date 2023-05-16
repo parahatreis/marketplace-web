@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // 
-import Logo from '../../img/Logo isleg_Text.svg'
+import Logo from '../../img/MultiBrand-LOGO.svg'
 import Mail from '../../img/icons/ma.svg'
 import Instagram from '../../img/icons/ins.svg'
 import Phone from '../../img/icons/ph.svg'
@@ -54,13 +54,13 @@ const Footer = () => {
                             <div>
                                 <img src={Mail} alt="contacts" />
                             </div>
-                            <a href="/">info@isleg.com</a>
+                            <a href="/">info@bultibrand.com</a>
                         </div>
                         <div className="c-item">
                             <div>
                                 <img src={Instagram} alt="contacts" />
                             </div>
-                            <a href="/">@islegtm</a>
+                            <a href="/">@bultibrand</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="below">
-                <Link to="/">islegtm.com </Link>  |  {t('all-rights')}
+                <Link to="/">bultibrand.com </Link>  |  {t('all-rights')}
             </div>
          </div>
       </footer>

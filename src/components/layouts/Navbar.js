@@ -1,5 +1,5 @@
 import React, {useEffect, useLayoutEffect, useState, useRef} from 'react';
-import Logo from '../../img/Logo isleg_Text.svg';
+import Logo from '../../img/MultiBrand-LOGO.svg';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

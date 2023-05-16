@@ -6,7 +6,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // 
-import PlaceholderImage from '../../img/placeholderISLEG.png';
+import PlaceholderImage from '../../img/placeholderMultiBrand.png';
 import apiPath from '../../utils/apiPath';
 import changeLangApi from '../../utils/changeLangApi';
 

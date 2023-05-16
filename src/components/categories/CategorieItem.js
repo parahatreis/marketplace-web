@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import PlaceholderImage from '../../img/placeholderISLEG.png'
+import PlaceholderImage from '../../img/placeholderMultiBrand.png'
 import { Link } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';

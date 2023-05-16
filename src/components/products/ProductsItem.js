@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 //
-import PlaceholderImage from "../../img/placeholderISLEG.png";
+import PlaceholderImage from "../../img/placeholderMultiBrand.png";
 import CartSVG from "../../img/icons/Cart-B.svg";
 import Tick from "../../img/icons/tick-blue.svg";
 import apiPath from "../../utils/apiPath";
