@@ -54,13 +54,13 @@ const Footer = () => {
                             <div>
                                 <img src={Mail} alt="contacts" />
                             </div>
-                            <a href="/">info@bultibrand.com</a>
+                            <a href="/">info@enar.com.tm</a>
                         </div>
                         <div className="c-item">
                             <div>
                                 <img src={Instagram} alt="contacts" />
                             </div>
-                            <a href="/">@bultibrand</a>
+                            <a href="/">@enar</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="below">
-                <Link to="/">bultibrand.com </Link>  |  {t('all-rights')}
+                <Link to="/">enar.com.tm </Link>  |  {t('all-rights')}
             </div>
          </div>
       </footer>
